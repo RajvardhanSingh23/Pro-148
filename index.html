@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+
+<html>
+    <head>
+        <script src="https://aframe.io/releases/0.7.1/aframe.min.js"></script>
+    </head>
+
+    <body>
+        <a-scene backgroundcolor = "black" >
+            <a-entity camera position = 0 30 0></a-entity>
+        
+            <a-assets>
+                <a-asset-item id="dog" src = "shiba_inu_dog/scene.gltf"></a-asset-item>
+                <a-asset-item id="lamp" src = "lamp_post/scene.gltf"></a-asset-item>
+                <a-asset-item id="boy" src = "boy/scene.gltf"></a-asset-item>
+
+            </a-assets>
+
+            <a-entity light="type:ambient;intensity:1">
+            </a-entity>
+        
+        
+            <a-entity animation="property:rotation;to:0 360 0;easing:linear;loop:true;dur:60000">
+              <a-entity light="type:directional;intensity:5;distance:50;decay:2;color:yellow;castShadow:True"position="-100 18 20">
+              </a-entity>
+            </a-entity>
+
+            <a-circle position="0 -10 -50" rotation="-90 0 0" radius="100" color = "blue"></a-circle>
+
+            <a-entity position="0 -9 -50" gltf-model="#dog" scale="1 1 1" rotation="0 0 0">
+            <a-entity position="-20 -9 -50" gltf-model="#lamp" scale="0.80 0.80 0.80" rotation="0 0 0">
+            <a-entity position="60 -9 -50" gltf-model="#boy" scale="0.80 0.80 0.80" rotation="0 0 0">
+
+            </a-entity>
+
+        </a-scene>
+    </body>
+</html>
